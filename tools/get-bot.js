@@ -1,8 +1,8 @@
 
 const AWS = require('aws-sdk')
-var dynamoClient = new AWS.DynamoDB.DocumentClient()
 
 const getBot = function (id) {
+  var dynamoClient = new AWS.DynamoDB.DocumentClient()
   var getBotParams = {
     TableName: this.config.tables.bot,
     Key: {

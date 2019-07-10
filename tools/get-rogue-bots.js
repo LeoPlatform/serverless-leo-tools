@@ -1,8 +1,8 @@
 
 const AWS = require('aws-sdk')
-var documentClient = new AWS.DynamoDB.DocumentClient()
 
 module.exports = async function () {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   // bots where errorCount > 10
   // not archived
   // must have trigger (time or trigger)

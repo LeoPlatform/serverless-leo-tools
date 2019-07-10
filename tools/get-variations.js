@@ -1,9 +1,8 @@
 
 const AWS = require('aws-sdk')
 
-var documentClient = new AWS.DynamoDB.DocumentClient()
-
 module.exports = async function (variationBaseName) {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   // Anything that begins with variationBaseName
   var getVariationsWithBaseName = {
     TableName: this.config.tables.bot,

@@ -1,9 +1,8 @@
 
 const AWS = require('aws-sdk')
 
-var documentClient = new AWS.DynamoDB.DocumentClient()
-
 module.exports = function (botId, templateName) {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   // for the given botId, set the templateId = templateName
   var templateIdValue = {
     TableName: this.config.tables.bot,

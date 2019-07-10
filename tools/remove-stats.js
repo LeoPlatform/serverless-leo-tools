@@ -2,9 +2,9 @@
 const chunk = require('lodash/fp/chunk')
 const async = require('async')
 const AWS = require('aws-sdk')
-var dynamoClient = new AWS.DynamoDB.DocumentClient()
 
 function removeStatsForBot (botId, done) {
+  var dynamoClient = new AWS.DynamoDB.DocumentClient()
   var getStatsParams = {
     TableName: this.config.tables.stats,
     KeyConditionExpression: '#id = :botId',

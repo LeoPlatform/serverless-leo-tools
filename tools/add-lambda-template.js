@@ -1,9 +1,8 @@
 
 const AWS = require('aws-sdk')
 
-var documentClient = new AWS.DynamoDB.DocumentClient()
-
 module.exports = function (lambdaName, templateName) {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   // in the Leo Settings table lambda-templates entry. Add lambdaname: templateName to the map
   var addLambdaTemplate = {
     TableName: this.config.tables.settings,

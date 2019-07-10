@@ -2,6 +2,7 @@
 
 // Serverless LifeCycle cheat sheet https://gist.github.com/HyperBrain/50d38027a8f57778d5b0f135d80ea406
 
+const BbPromise = require('bluebird')
 const createLeoTools = require('./lib/createLeoTools')
 
 class ServerlessLeoTools {
@@ -45,13 +46,13 @@ class ServerlessLeoTools {
     )
 
     this.hooks = {
-      'leo:list-bots:create-leo-tools': createLeoTools,
+      'leo:list-bots:create-leo-tools': this.createLeoTools.bind(this),
       'leo:list-bots:get-bots': async () => {
         const { leoTools } = serverless.variables
         const bots = await leoTools.getBotsContaining()
         console.log(JSON.stringify(bots, null, 2)) // sending to user
       },
-      'leo:list-queues:create-leo-tools': createLeoTools,
+      'leo:list-queues:create-leo-tools': this.createLeoTools.bind(this),
       'leo:list-queues:get-queues': async () => {
         const { leoTools } = serverless.variables
         const queues = await leoTools.getQueues()

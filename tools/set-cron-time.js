@@ -1,8 +1,8 @@
 
 const AWS = require('aws-sdk')
-var documentClient = new AWS.DynamoDB.DocumentClient()
 
 module.exports = function (botId, cronTime) {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   var setCronTimeParams = {
     TableName: this.config.tables.bot,
     Key: { id: botId },

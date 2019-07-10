@@ -1,8 +1,8 @@
 
 const AWS = require('aws-sdk')
-var dynamoClient = new AWS.DynamoDB.DocumentClient()
 
 module.exports = async function (queue, startKey = '', limit = 10) {
+  var dynamoClient = new AWS.DynamoDB.DocumentClient()
   function hashCode (str) {
     if (typeof str === 'number') {
       return str

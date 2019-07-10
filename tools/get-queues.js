@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk')
-var documentClient = new AWS.DynamoDB.DocumentClient()
 
 module.exports = async function () {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   var botsContainingParams = {
     TableName: this.config.tables.events
   }

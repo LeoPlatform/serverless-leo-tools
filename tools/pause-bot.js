@@ -1,8 +1,8 @@
 
 const AWS = require('aws-sdk')
-var documentClient = new AWS.DynamoDB.DocumentClient()
 
 module.exports = function (botId, pauseState = true) {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   var setPauseParameters = {
     TableName: this.config.tables.bot,
     Key: { id: botId },

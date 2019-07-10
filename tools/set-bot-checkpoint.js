@@ -1,8 +1,8 @@
 
 const AWS = require('aws-sdk')
-var documentClient = new AWS.DynamoDB.DocumentClient()
 
 module.exports = function (botId, readCheckpointKey, newCheckpointEid) {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   if (typeof readCheckpointKey === 'undefined' || readCheckpointKey.length === 0) return Promise.resolve()
   var setCheckpointsParams = {
     TableName: this.config.tables.bot,

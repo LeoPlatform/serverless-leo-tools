@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk')
-var documentClient = new AWS.DynamoDB.DocumentClient()
 
 module.exports = async function (value, scanFilterOverride = {}, selectKeys = []) {
+  var documentClient = new AWS.DynamoDB.DocumentClient()
   const ScanFilter = {
     'archived': {
       ComparisonOperator: 'NE',

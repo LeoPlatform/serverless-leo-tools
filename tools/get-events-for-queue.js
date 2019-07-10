@@ -1,10 +1,10 @@
 
 const AWS = require('aws-sdk')
-var dynamoClient = new AWS.DynamoDB.DocumentClient()
 
 // module.exports = async (value, scanFilterOverride = {}) => {
 // function getEventsForQueue (queue, start, end, limit, done) {
 module.exports = async function (queue, start, end, limit) {
+  var dynamoClient = new AWS.DynamoDB.DocumentClient()
   var getEventsParams = {
     TableName: this.config.tables.events,
     KeyConditionExpression: '#event = :event and #key between :start and :maxkey',
