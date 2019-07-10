@@ -15,15 +15,16 @@
     "plugin",
     "leo",
     "leo-sdk",
-    "microservices",
-    "bot"
+    "bot",
+    "tools",
+    "cli"
   ],
-  "author": "Taylor",
-  "license": "MIT",
+  "author": "seriouscoderone",
+  "license": "Apache2",
   "bugs": {
-    "url": "https://github.com/LeoPlatform/serverless-leo/issues"
+    "url": "https://github.com/LeoPlatform/serverless-leo-tools/issues"
   },
-  "homepage": "https://github.com/LeoPlatform/serverless-leo#readme",
+  "homepage": "https://github.com/LeoPlatform/serverless-leo-tools#readme",
   "dependencies": {
     "bluebird": "^3.5.4",
     "find-up": "^3.0.0",
