@@ -6,7 +6,7 @@ const AWS = require('aws-sdk')
 module.exports = async function (queue, start, end, limit) {
   var dynamoClient = new AWS.DynamoDB.DocumentClient()
   var getEventsParams = {
-    TableName: this.config.tables.events,
+    TableName: this.config.table.event,
     KeyConditionExpression: '#event = :event and #key between :start and :maxkey',
     ExpressionAttributeNames: {
       '#event': 'event',

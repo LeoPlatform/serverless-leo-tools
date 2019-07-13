@@ -53,7 +53,7 @@ const createCronTable = () => {
       ReadCapacityUnits: 5,
       WriteCapacityUnits: 5
     },
-    TableName: testConfig.tables.bot
+    TableName: testConfig.table.bot
   }
   return dynamodb.createTable(params).promise()
 }
@@ -61,7 +61,7 @@ const createCronTable = () => {
 const seedCronTable = () => {
   var params = {
     RequestItems: {
-      [testConfig.tables.bot]: [
+      [testConfig.table.bot]: [
         {
           PutRequest: {
             Item: {
@@ -175,7 +175,7 @@ const createSettingsTable = () => {
       ReadCapacityUnits: 5,
       WriteCapacityUnits: 5
     },
-    TableName: testConfig.tables.settings
+    TableName: testConfig.table.setting
   }
   return dynamodb.createTable(params).promise()
 }
@@ -183,7 +183,7 @@ const createSettingsTable = () => {
 const seedSettingsTable = () => {
   var params = {
     RequestItems: {
-      [testConfig.tables.settings]: [
+      [testConfig.table.setting]: [
         {
           PutRequest: {
             Item: {
@@ -217,7 +217,7 @@ const createEventTable = () => {
       ReadCapacityUnits: 5,
       WriteCapacityUnits: 5
     },
-    TableName: testConfig.tables.events
+    TableName: testConfig.table.event
   }
   return dynamodb.createTable(params).promise()
 }
@@ -225,7 +225,7 @@ const createEventTable = () => {
 const seedEventTable = () => {
   var params = {
     RequestItems: {
-      [testConfig.tables.events]: [
+      [testConfig.table.event]: [
         {
           PutRequest: {
             Item: {

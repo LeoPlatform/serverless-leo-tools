@@ -7,7 +7,7 @@ module.exports = async function () {
   // not archived
   // must have trigger (time or trigger)
   var botsContainingParams = {
-    TableName: this.config.tables.bot,
+    TableName: this.config.table.bot,
     ScanFilter: {
       'errorCount': {
         ComparisonOperator: 'GT',

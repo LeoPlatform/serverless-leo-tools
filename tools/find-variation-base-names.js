@@ -5,7 +5,7 @@ module.exports = async function () {
   var documentClient = new AWS.DynamoDB.DocumentClient()
   // Anything with '-var' in the name is a variation
   var getAllVariations = {
-    TableName: this.config.tables.bot,
+    TableName: this.config.table.bot,
     ScanFilter: {
       'id': {
         ComparisonOperator: 'CONTAINS',

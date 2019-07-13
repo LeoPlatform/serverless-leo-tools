@@ -4,7 +4,7 @@ const AWS = require('aws-sdk')
 const getSetting = function (id) {
   var dynamoClient = new AWS.DynamoDB.DocumentClient()
   var getSettingParams = {
-    TableName: this.config.tables.settings,
+    TableName: this.config.table.setting,
     Key: {
       'id': id
     }

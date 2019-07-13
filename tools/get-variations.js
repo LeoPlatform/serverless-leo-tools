@@ -5,7 +5,7 @@ module.exports = async function (variationBaseName) {
   var documentClient = new AWS.DynamoDB.DocumentClient()
   // Anything that begins with variationBaseName
   var getVariationsWithBaseName = {
-    TableName: this.config.tables.bot,
+    TableName: this.config.table.bot,
     ScanFilter: {
       'id': {
         ComparisonOperator: 'BEGINS_WITH',

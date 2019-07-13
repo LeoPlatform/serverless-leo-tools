@@ -18,7 +18,7 @@ module.exports = async function (value, scanFilterOverride = {}, selectKeys = []
     }
   }
   var botsContainingParams = {
-    TableName: this.config.tables.bot,
+    TableName: this.config.table.bot,
     ScanFilter: Object.assign(ScanFilter, scanFilterOverride)
   }
   if (Array.isArray(selectKeys) && selectKeys.length > 0) {
